@@ -210,56 +210,6 @@
 
   <repositories>
     <repository>
-      <id>apache</id>
-      <name>Apache Repository</name>
-      <url>https://repository.apache.org/content/repositories</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>jcenter</id>
-      <url>https://jcenter.bintray.com</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>huawei</id>
-      <url>https://repo.huaweicloud.com/repository/maven/huaweicloudsdk</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>spring-plugins</id>
-      <url>https://repo.spring.io/plugins-release</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>spring-snapshots</id>
-      <url>https://repo.spring.io/snapshot</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>spring-milestones</id>
-      <url>https://repo.spring.io/milestone</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>conjars-wensel</id>
-      <url>https://conjars.wensel.net/repo/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
       <id>central</id>
       <name>central</name>
       <url>https://repo.maven.apache.org/maven2</url>
@@ -279,6 +229,35 @@
         <updatePolicy>always</updatePolicy>
         <checksumPolicy>warn</checksumPolicy>
       </releases>
+    </repository>
+    <repository>
+      <id>apache</id>
+      <name>Apache Repository</name>
+      <url>https://repository.apache.org/content/repositories</url>
+    </repository>
+    <repository>
+      <id>jcenter</id>
+      <url>https://jcenter.bintray.com</url>
+    </repository>
+    <repository>
+      <id>huawei</id>
+      <url>https://repo.huaweicloud.com/repository/maven/huaweicloudsdk</url>
+    </repository>
+    <repository>
+      <id>spring-plugins</id>
+      <url>https://repo.spring.io/plugins-release</url>
+    </repository>
+    <repository>
+      <id>spring-snapshots</id>
+      <url>https://repo.spring.io/snapshot</url>
+    </repository>
+    <repository>
+      <id>spring-milestones</id>
+      <url>https://repo.spring.io/milestone</url>
+    </repository>
+    <repository>
+      <id>conjars-wensel</id>
+      <url>https://conjars.wensel.net/repo/</url>
     </repository>
   </repositories>
 
