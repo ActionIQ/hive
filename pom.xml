@@ -212,9 +212,6 @@
       <id>apache</id>
       <name>Apache Repository</name>
       <url>https://repository.apache.org/content/repositories</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -223,20 +220,27 @@
       <id>central</id>
       <name>Maven Repository</name>
       <url>https://repo.maven.apache.org/maven2</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
     </repository>
     <repository>
       <id>jcenter</id>
-      <name>JCenter Bintray</name>
       <url>https://jcenter.bintray.com</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>huawei</id>
+      <url>https://repo.huaweicloud.com/repository/maven/huaweicloudsdk</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>spring-plugins</id>
+      <url>https://repo.spring.io/plugins-release</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -245,16 +249,22 @@
       <id>spring-snapshots</id>
       <url>https://repo.spring.io/snapshot</url>
       <snapshots>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
       </snapshots>
     </repository>
     <repository>
       <id>spring-milestones</id>
       <url>https://repo.spring.io/milestone</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
     </repository>
     <repository>
       <id>conjars.org</id>
       <url>https://conjars.wensel.net/repo/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
     </repository>
     <repository>
       <id>datanucleus</id>
