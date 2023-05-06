@@ -282,6 +282,7 @@
               <goal>shade</goal>
             </goals>
             <configuration>
+              <shadedArtifactAttached>false</shadedArtifactAttached>
               <shadeTestJar>true</shadeTestJar>
               <createDependencyReducedPom>false</createDependencyReducedPom>
               <relocations>

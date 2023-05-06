@@ -152,7 +152,7 @@
             </goals>
             <configuration>
               <minimizeJar>${packaging.minimizeJar}</minimizeJar>
-              <shadedArtifactAttached>true</shadedArtifactAttached>
+              <shadedArtifactAttached>false</shadedArtifactAttached>
               <shadedClassifierName>${hive.jdbc.driver.classifier}</shadedClassifierName>
               <filters>
                 <filter>

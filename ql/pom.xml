@@ -833,14 +833,13 @@
         <artifactId>maven-shade-plugin</artifactId>
         <executions>
           <execution>
-<!--
             <id>build-exec-bundle</id>
             <phase>package</phase>
             <goals>
               <goal>shade</goal>
             </goals>
--->
             <configuration>
+              <shadedArtifactAttached>false</shadedArtifactAttached>
                 <!--also see maven-jar-plugin execution.id=core-jar-->
               <artifactSet>
                 <includes>
