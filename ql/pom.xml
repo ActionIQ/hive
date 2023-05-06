@@ -19,7 +19,7 @@
   <parent>
     <groupId>org.apache.hive</groupId>
     <artifactId>hive</artifactId>
-    <version>2.3.9-aiq1</version>
+    <version>2.3.9-aiq2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -833,11 +833,13 @@
         <artifactId>maven-shade-plugin</artifactId>
         <executions>
           <execution>
+<!--
             <id>build-exec-bundle</id>
             <phase>package</phase>
             <goals>
               <goal>shade</goal>
             </goals>
+-->
             <configuration>
                 <!--also see maven-jar-plugin execution.id=core-jar-->
               <artifactSet>
@@ -851,8 +853,8 @@
                   <include>org.apache.hive:hive-metastore</include>
                   <include>org.apache.hive:hive-service-rpc</include>
                   <include>com.esotericsoftware:kryo-shaded</include>
-		  <include>com.esotericsoftware:minlog</include>
-		  <include>org.objenesis:objenesis</include>
+                  <include>com.esotericsoftware:minlog</include>
+                  <include>org.objenesis:objenesis</include>
                   <include>org.apache.parquet:parquet-hadoop-bundle</include>
                   <include>org.apache.thrift:libthrift</include>
                   <include>org.apache.thrift:libfb303</include>
