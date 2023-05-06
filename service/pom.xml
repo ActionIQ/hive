@@ -19,7 +19,7 @@
   <parent>
     <groupId>org.apache.hive</groupId>
     <artifactId>hive</artifactId>
-    <version>2.3.9</version>
+    <version>2.3.9-aiq1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -196,6 +196,12 @@
       <artifactId>apacheds-server-integ</artifactId>
       <version>${apache-directory-server.version}</version>
       <scope>test</scope>
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.directory.client.ldap</groupId>
+            <artifactId>ldap-client-api</artifactId>
+          </exclusion>
+        </exclusions>
     </dependency>
 
     <dependency>
