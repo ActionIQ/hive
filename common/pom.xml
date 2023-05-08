@@ -309,23 +309,6 @@
           </execution>
         </executions>
       </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <executions>
-            <execution>
-              <goals>
-                <goal>test-jar</goal>
-              </goals>
-              <configuration>
-                <!--exclude configuration xml that might be picked up-->
-                <excludes>
-                   <exclude>*.xml</exclude>
-                </excludes>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -334,15 +317,11 @@
             <goals>
               <goal>test-jar</goal>
             </goals>
-          </execution>
-          <execution>
-            <id>core-jar</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
             <configuration>
-              <classifier>core</classifier>
+              <!--exclude configuration xml that might be picked up-->
+              <excludes>
+                 <exclude>*.xml</exclude>
+              </excludes>
             </configuration>
           </execution>
         </executions>
@@ -358,19 +337,10 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-              <artifactSet>
-                <includes>
-                  <include>com.google.guava:guava</include>
-                </includes>
-              </artifactSet>
               <relocations>
                 <relocation>
                   <pattern>com.google.common</pattern>
                   <shadedPattern>org.apache.hive.com.google.common</shadedPattern>
-                </relocation>
-                <relocation>
-                  <pattern>com.google.thirdparty.publicsuffix</pattern>
-                  <shadedPattern>org.apache.hive.com.google.thirdparty.publicsuffix</shadedPattern>
                 </relocation>
               </relocations>
             </configuration>
