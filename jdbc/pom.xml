@@ -268,10 +268,6 @@
                   <shadedPattern>org.apache.hive.org.apache.thrift</shadedPattern>
                 </relocation>
                 <relocation>
-                  <pattern>com.google.common</pattern>
-                  <shadedPattern>org.apache.hive.com.google.common</shadedPattern>
-                </relocation>
-                <relocation>
                   <pattern>org.apache.commons</pattern>
                   <shadedPattern>org.apache.hive.org.apache.commons</shadedPattern>
                 </relocation>
