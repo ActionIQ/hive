@@ -432,6 +432,9 @@ public class HiveConf extends Configuration {
    * in the underlying Hadoop configuration.
    */
   public static enum ConfVars {
+    // AIQ stuff
+    LOAD_DATABASE_FUNCTIONS("hive.exec.aiq.load.database.functions", true,
+        "Load database functions on Hive startup."),
     // QL execution stuff
     SCRIPTWRAPPER("hive.exec.script.wrapper", null, ""),
     PLAN("hive.exec.plan", "", ""),

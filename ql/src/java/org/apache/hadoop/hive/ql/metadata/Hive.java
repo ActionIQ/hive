@@ -243,28 +243,31 @@ public class Hive {
 
 
   public void reloadFunctions() throws HiveException {
-    HashSet<String> registryFunctions = new HashSet<String>(
-        FunctionRegistry.getFunctionNames(".+\\..+"));
-    for (Function function : getAllFunctions()) {
-      String functionName = function.getFunctionName();
-      try {
-        LOG.info("Registering function " + functionName + " " + function.getClassName());
-        String qualFunc = FunctionUtils.qualifyFunctionName(functionName, function.getDbName());
-        FunctionRegistry.registerPermanentFunction(qualFunc, function.getClassName(), false,
-                    FunctionTask.toFunctionResource(function.getResourceUris()));
-        registryFunctions.remove(qualFunc);
-      } catch (Exception e) {
-        LOG.warn("Failed to register persistent function " +
-                functionName + ":" + function.getClassName() + ". Ignore and continue.");
+    Hive db = get(false /*doRegisterAllFns*/);
+    if (db.conf.getBoolVar(HiveConf.ConfVars.LOAD_DATABASE_FUNCTIONS)) {
+      HashSet<String> registryFunctions = new HashSet<String>(
+              FunctionRegistry.getFunctionNames(".+\\..+"));
+      for (Function function : getAllFunctions()) {
+        String functionName = function.getFunctionName();
+        try {
+          LOG.info("Registering function " + functionName + " " + function.getClassName());
+          String qualFunc = FunctionUtils.qualifyFunctionName(functionName, function.getDbName());
+          FunctionRegistry.registerPermanentFunction(qualFunc, function.getClassName(), false,
+                  FunctionTask.toFunctionResource(function.getResourceUris()));
+          registryFunctions.remove(qualFunc);
+        } catch (Exception e) {
+          LOG.warn("Failed to register persistent function " +
+                  functionName + ":" + function.getClassName() + ". Ignore and continue.");
+        }
       }
-    }
-    // unregister functions from local system registry that are not in getAllFunctions()
-    for (String functionName : registryFunctions) {
-      try {
-        FunctionRegistry.unregisterPermanentFunction(functionName);
-      } catch (Exception e) {
-        LOG.warn("Failed to unregister persistent function " +
-            functionName + "on reload. Ignore and continue.");
+      // unregister functions from local system registry that are not in getAllFunctions()
+      for (String functionName : registryFunctions) {
+        try {
+          FunctionRegistry.unregisterPermanentFunction(functionName);
+        } catch (Exception e) {
+          LOG.warn("Failed to unregister persistent function " +
+                  functionName + "on reload. Ignore and continue.");
+        }
       }
     }
   }
