@@ -243,7 +243,7 @@ public class Hive {
 
 
   public void reloadFunctions() throws HiveException {
-    Hive db = get();
+    Hive db = get(false /*doRegisterAllFns*/);
     if (db.conf.getBoolVar(HiveConf.ConfVars.LOAD_DATABASE_FUNCTIONS)) {
       HashSet<String> registryFunctions = new HashSet<String>(
               FunctionRegistry.getFunctionNames(".+\\..+"));
