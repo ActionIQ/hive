@@ -20,6 +20,7 @@ package org.apache.hive.spark.client;
 import com.google.common.collect.Lists;
 import org.apache.hive.spark.client.JobHandle.Listener;
 
+import org.junit.Ignore;
 import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
@@ -88,7 +89,7 @@ public class TestSparkClient {
     return conf;
   }
 
-  @Test
+  @Test(timeout = 10000)
   public void testJobSubmission() throws Exception {
     runTest(true, new TestFunction() {
       @Override
@@ -109,7 +110,7 @@ public class TestSparkClient {
     });
   }
 
-  @Test
+  @Test(timeout = 10000)
   public void testSimpleSparkJob() throws Exception {
     runTest(true, new TestFunction() {
       @Override
@@ -120,7 +121,7 @@ public class TestSparkClient {
     });
   }
 
-  @Test
+  @Test(timeout = 10000)
   public void testErrorJob() throws Exception {
     runTest(true, new TestFunction() {
       @Override
@@ -148,7 +149,7 @@ public class TestSparkClient {
     });
   }
 
-  @Test
+  @Test(timeout = 10000)
   public void testSyncRpc() throws Exception {
     runTest(true, new TestFunction() {
       @Override
@@ -159,7 +160,7 @@ public class TestSparkClient {
     });
   }
 
-  @Test
+  @Test(timeout = 10000)
   public void testRemoteClient() throws Exception {
     runTest(false, new TestFunction() {
       @Override
@@ -170,7 +171,7 @@ public class TestSparkClient {
     });
   }
 
-  @Test
+  @Test(timeout = 10000)
   public void testMetricsCollection() throws Exception {
     runTest(true, new TestFunction() {
       @Override
@@ -199,7 +200,7 @@ public class TestSparkClient {
     });
   }
 
-  @Test
+  @Test(timeout = 10000)
   public void testAddJarsAndFiles() throws Exception {
     runTest(true, new TestFunction() {
       @Override
@@ -253,7 +254,7 @@ public class TestSparkClient {
     });
   }
 
-  @Test
+  @Test(timeout = 10000)
   public void testCounters() throws Exception {
     runTest(true, new TestFunction() {
       @Override

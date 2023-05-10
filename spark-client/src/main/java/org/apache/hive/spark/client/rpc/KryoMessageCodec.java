@@ -129,9 +129,14 @@ class KryoMessageCodec extends ByteToMessageCodec<Object> {
   }
 
   private void checkSize(int msgSize) {
-    Preconditions.checkArgument(msgSize > 0, "Message size (%s bytes) must be positive.", msgSize);
-    Preconditions.checkArgument(maxMessageSize <= 0 || msgSize <= maxMessageSize,
-        "Message (%s bytes) exceeds maximum allowed size (%s bytes).", msgSize, maxMessageSize);
+    Preconditions.checkArgument(
+      msgSize > 0,
+      String.format("Message size (%s bytes) must be positive.", msgSize)
+    );
+    Preconditions.checkArgument(
+  maxMessageSize <= 0 || msgSize <= maxMessageSize,
+      String.format("Message (%s bytes) exceeds maximum allowed size (%s bytes).", msgSize, maxMessageSize)
+    );
   }
 
   private byte[] maybeEncrypt(byte[] data) throws Exception {
