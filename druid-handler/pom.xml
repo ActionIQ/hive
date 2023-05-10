@@ -309,10 +309,6 @@
                   <pattern>com.fasterxml.jackson</pattern>
                   <shadedPattern>org.apache.hive.druid.com.fasterxml.jackson</shadedPattern>
                 </relocation>
-                <relocation>
-                  <pattern>com.google.common</pattern>
-                  <shadedPattern>org.apache.hive.druid.com.google.common</shadedPattern>
-                </relocation>
               </relocations>
               <artifactSet>
                 <includes>
@@ -324,7 +320,6 @@
                   <include>com.fasterxml.jackson.core:*</include>
                   <include>com.fasterxml.jackson.datatype:*</include>
                   <include>com.fasterxml.jackson.dataformat:*</include>
-                  <include>com.google.guava:*</include>
                   <include>it.unimi.dsi:*</include>
                   <include>org.jdbi:*</include>
                   <include>net.jpountz.lz4:*</include>

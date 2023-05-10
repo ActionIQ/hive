@@ -282,8 +282,10 @@ public class RpcServer implements Closeable {
           "Missing client ID in SASL handshake.");
         clientId = challenge.clientId;
         client = pendingClients.get(clientId);
-        Preconditions.checkArgument(client != null,
-          "Unexpected client ID '%s' in SASL handshake.", clientId);
+        Preconditions.checkArgument(
+      client != null,
+          String.format("Unexpected client ID '%s' in SASL handshake.", clientId)
+        );
       }
 
       return new Rpc.SaslMessage(server.evaluateResponse(challenge.payload));
