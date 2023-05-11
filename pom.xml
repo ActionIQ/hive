@@ -21,7 +21,7 @@
   </parent>
   <groupId>org.apache.hive</groupId>
   <artifactId>hive</artifactId>
-  <version>2.3.9-aiq5</version>
+  <version>2.3.9-aiq6</version>
   <packaging>pom</packaging>
 
   <name>Hive</name>
@@ -220,17 +220,6 @@
       </releases>
     </repository>
     <repository>
-      <id>conjars</id>
-      <name>Conjars</name>
-      <url>http://conjars.org/repo</url>
-      <layout>default</layout>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
-      </releases>
-    </repository>
-    <repository>
       <id>apache</id>
       <name>Apache Repository</name>
       <url>https://repository.apache.org/content/repositories</url>
@@ -258,6 +247,17 @@
     <repository>
       <id>conjars-wensel</id>
       <url>https://conjars.wensel.net/repo/</url>
+    </repository>
+    <repository>
+      <id>conjars</id>
+      <name>Conjars</name>
+      <url>http://conjars.org/repo</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </releases>
     </repository>
   </repositories>
 
